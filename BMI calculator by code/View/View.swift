@@ -13,11 +13,20 @@ class View: UIView {
     private let backgroundImage: UIImageView = .makeBackground()
     private let labelBMI: UILabel = .makeLabel(text: "Узнай свой ИМТ", textAligment: .center, color: .darkGray, fontName: "BoldFont", and: 40)
     private let labelHeight: UILabel = .makeLabel(text: "Рост", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
+    private let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
     let labelWeight: UILabel = .makeLabel(text: "Вес", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
-   // let heightValue: UILabel = .makeValueLabel(value: \(heightSliderChanged(UISlider) ,color: .black)
     let heightSlider: UISlider = .makeSlider(maxValue: 3, minValue: 1.2)
     let weightSlider: UISlider = .makeSlider(maxValue: 200, minValue: 10)
-    private let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
+    var weightValue: UILabel = {
+        let label = UILabel()
+        label.text = "10"
+        return label
+    }()
+    var heightValue: UILabel = {
+        let label = UILabel()
+        label.text = "1.2"
+        return label
+    }()
  // Views
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +37,8 @@ class View: UIView {
         addSubview(labelWeight)
         addSubview(weightSlider)
         addSubview(calculateButton)
+        addSubview(weightValue)
+        addSubview(heightValue)
         setLayout()
     }
     // Life cycle
@@ -42,7 +53,15 @@ class View: UIView {
     
    // Methods
     func setLayout (){
-        [backgroundImage, labelBMI, labelHeight,labelWeight, heightSlider, weightSlider, calculateButton].forEach{
+        [backgroundImage,
+         labelBMI,
+         labelHeight,
+         labelWeight,
+         heightSlider,
+         weightSlider,
+         calculateButton,
+         weightValue,
+         heightValue].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         NSLayoutConstraint.activate([
@@ -59,6 +78,9 @@ class View: UIView {
             labelHeight.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
             labelHeight.topAnchor.constraint(equalTo: labelBMI.bottomAnchor),
             
+            heightValue.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            heightValue.topAnchor.constraint(equalTo: labelBMI.bottomAnchor, constant: 10),
+            
             heightSlider.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             heightSlider.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             heightSlider.topAnchor.constraint(equalTo: labelHeight.bottomAnchor, constant: 10),
@@ -67,6 +89,9 @@ class View: UIView {
             labelWeight.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             labelWeight.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
             labelWeight.topAnchor.constraint(equalTo: heightSlider.bottomAnchor, constant: 10),
+            
+            weightValue.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            weightValue.topAnchor.constraint(equalTo: heightSlider.bottomAnchor, constant: 10),
             
             weightSlider.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             weightSlider.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
@@ -85,5 +110,3 @@ class View: UIView {
 
 
 }
-
-

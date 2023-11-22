@@ -27,10 +27,5 @@ extension UILabel {
         
     }
     
-    static func makeValueLabel (value: String, color: UIColor) -> UILabel {
-        let label = UILabel()
-        label.text = String(value)
-        label.textColor = color
-    return label
-    }
+  
 }

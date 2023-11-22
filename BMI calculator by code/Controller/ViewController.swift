@@ -20,20 +20,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         mainView.heightSlider.addTarget(self, action: #selector(heightSliderChanged), for: .allEvents)
         mainView.weightSlider.addTarget(self, action: #selector(weightSliderChanged), for: .allEvents)
-//        func heightSliderChanged (_ sender: UISlider) {
-//            print (View.heightSlider.value)
-//        }
+
         
     }
-    @objc func heightSliderChanged (_ sender: UISlider) -> String {
+    @objc func heightSliderChanged (_ sender: UISlider) {
         let decimalValue = String(format: "%.2f", sender.value)
+        mainView.heightValue.text = decimalValue
         print (decimalValue)
-        return decimalValue
     }
-    @objc func weightSliderChanged (_ sender: UISlider) -> String {
-        let decimalValue = String(format: "%.2f", sender.value)
+    @objc func weightSliderChanged (_ sender: UISlider) {
+        let decimalValue = String(format: "%.0f", sender.value)
+        mainView.weightValue.text = decimalValue
         print (decimalValue)
-        return decimalValue
     }
 
 }

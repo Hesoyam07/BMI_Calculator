@@ -10,15 +10,24 @@ import UIKit
 
 class View: UIView {
  // UI
-    private let backgroundImage = View.makeBackground()
-    private let labelBMI = View.makeLabel(text: "Узнай свой ИМТ", color: .darkGray, fontName: "BoldFont", and: 40)
-    private let labelHeight = View.makeLabel(text: "Рост", color: .darkGray, fontName: "LightFont", and: 17)
+    private let backgroundImage: UIImageView = .makeBackground()
+    private let labelBMI: UILabel = .makeLabel(text: "Узнай свой ИМТ", textAligment: .center, color: .darkGray, fontName: "BoldFont", and: 40)
+    private let labelHeight: UILabel = .makeLabel(text: "Рост", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
+    let labelWeight: UILabel = .makeLabel(text: "Вес", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
+   // let heightValue: UILabel = .makeValueLabel(value: \(heightSliderChanged(UISlider) ,color: .black)
+    let heightSlider: UISlider = .makeSlider(maxValue: 3, minValue: 1.2)
+    let weightSlider: UISlider = .makeSlider(maxValue: 200, minValue: 10)
+    private let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
  // Views
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(backgroundImage)
         addSubview(labelBMI)
         addSubview(labelHeight)
+        addSubview(heightSlider)
+        addSubview(labelWeight)
+        addSubview(weightSlider)
+        addSubview(calculateButton)
         setLayout()
     }
     // Life cycle
@@ -33,7 +42,7 @@ class View: UIView {
     
    // Methods
     func setLayout (){
-        [backgroundImage, labelBMI].forEach{
+        [backgroundImage, labelBMI, labelHeight,labelWeight, heightSlider, weightSlider, calculateButton].forEach{
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         NSLayoutConstraint.activate([
@@ -46,9 +55,30 @@ class View: UIView {
             labelBMI.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             labelBMI.heightAnchor.constraint(equalToConstant: 550),
             
-            labelHeight.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            labelHeight.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            labelHeight.topAnchor.constraint(equalTo: labelBMI.bottomAnchor)
+            labelHeight.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            labelHeight.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            labelHeight.topAnchor.constraint(equalTo: labelBMI.bottomAnchor),
+            
+            heightSlider.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            heightSlider.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            heightSlider.topAnchor.constraint(equalTo: labelHeight.bottomAnchor, constant: 10),
+            heightSlider.heightAnchor.constraint(equalToConstant: 60),
+            
+            labelWeight.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            labelWeight.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            labelWeight.topAnchor.constraint(equalTo: heightSlider.bottomAnchor, constant: 10),
+            
+            weightSlider.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            weightSlider.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            weightSlider.topAnchor.constraint(equalTo: labelWeight.bottomAnchor, constant: 10),
+            weightSlider.heightAnchor.constraint(equalToConstant: 60),
+            
+            calculateButton.heightAnchor.constraint(equalToConstant: 50),
+            calculateButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            calculateButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            calculateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            calculateButton.topAnchor.constraint(equalTo: weightSlider.bottomAnchor, constant: 10)
+
 
         ])
     }
@@ -56,32 +86,4 @@ class View: UIView {
 
 }
 
-extension View {
 
-    static func makeBackground () -> UIImageView {
-        let background = UIImageView()
-        background.image = UIImage(named: "calculate_background")
-        background.contentMode = .scaleAspectFit
-       return background
-    }
-    
-    static func makeLabel (text: String, color: UIColor, fontName: String, and size: CGFloat) -> UILabel {
-        let label = UILabel()
-        label.textColor = color
-        label.textAlignment = .center
-        label.text = text
-        label.numberOfLines = 0
-        label.contentMode = .left
-        switch fontName {
-           case "BoldFont":
-               label.font = UIFont.boldSystemFont(ofSize: size)
-           case "LightFont":
-               label.font = UIFont.systemFont(ofSize: size, weight: .light)
-           default:
-               label.font = UIFont.systemFont(ofSize: size)
-           }
-           
-        return label
-        
-    }
-}

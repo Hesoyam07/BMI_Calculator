@@ -12,12 +12,13 @@
 		2C9A05E32B0B7013008D1D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05E22B0B7013008D1D9A /* ViewController.swift */; };
 		2C9A05E82B0B7014008D1D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A05E72B0B7014008D1D9A /* Assets.xcassets */; };
 		2C9A05EB2B0B7014008D1D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9A05E92B0B7014008D1D9A /* LaunchScreen.storyboard */; };
-		2C9A05F62B0B7151008D1D9A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05F52B0B7151008D1D9A /* View.swift */; };
+		2C9A05F62B0B7151008D1D9A /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05F52B0B7151008D1D9A /* CalculateView.swift */; };
 		2C9A05F92B0D4DEA008D1D9A /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05F82B0D4DEA008D1D9A /* UIButton.swift */; };
 		2C9A05FB2B0D4EFB008D1D9A /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05FA2B0D4EFB008D1D9A /* UILabel.swift */; };
 		2C9A05FD2B0D4F83008D1D9A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05FC2B0D4F83008D1D9A /* UIImageView.swift */; };
 		2C9A05FF2B0D5048008D1D9A /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05FE2B0D5048008D1D9A /* UISlider.swift */; };
 		2C9A06012B0D51E2008D1D9A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A06002B0D51E2008D1D9A /* UIView.swift */; };
+		2C9A06032B0EA51A008D1D9A /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A06022B0EA51A008D1D9A /* FinalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +29,13 @@
 		2C9A05E72B0B7014008D1D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C9A05EA2B0B7014008D1D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C9A05EC2B0B7014008D1D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C9A05F52B0B7151008D1D9A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		2C9A05F52B0B7151008D1D9A /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
 		2C9A05F82B0D4DEA008D1D9A /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		2C9A05FA2B0D4EFB008D1D9A /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		2C9A05FC2B0D4F83008D1D9A /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		2C9A05FE2B0D5048008D1D9A /* UISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISlider.swift; sourceTree = "<group>"; };
 		2C9A06002B0D51E2008D1D9A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2C9A06022B0EA51A008D1D9A /* FinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,8 @@
 		2C9A05F42B0B70DB008D1D9A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2C9A05F52B0B7151008D1D9A /* View.swift */,
+				2C9A05F52B0B7151008D1D9A /* CalculateView.swift */,
+				2C9A06022B0EA51A008D1D9A /* FinalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,7 +188,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C9A05F92B0D4DEA008D1D9A /* UIButton.swift in Sources */,
-				2C9A05F62B0B7151008D1D9A /* View.swift in Sources */,
+				2C9A06032B0EA51A008D1D9A /* FinalView.swift in Sources */,
+				2C9A05F62B0B7151008D1D9A /* CalculateView.swift in Sources */,
 				2C9A05FF2B0D5048008D1D9A /* UISlider.swift in Sources */,
 				2C9A05FD2B0D4F83008D1D9A /* UIImageView.swift in Sources */,
 				2C9A05E32B0B7013008D1D9A /* ViewController.swift in Sources */,

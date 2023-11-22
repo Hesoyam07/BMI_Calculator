@@ -13,7 +13,7 @@ class View: UIView {
     private let backgroundImage: UIImageView = .makeBackground()
     private let labelBMI: UILabel = .makeLabel(text: "Узнай свой ИМТ", textAligment: .center, color: .darkGray, fontName: "BoldFont", and: 40)
     private let labelHeight: UILabel = .makeLabel(text: "Рост", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
-    private let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
+    let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
     let labelWeight: UILabel = .makeLabel(text: "Вес", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
     let heightSlider: UISlider = .makeSlider(maxValue: 3, minValue: 1.2)
     let weightSlider: UISlider = .makeSlider(maxValue: 200, minValue: 10)

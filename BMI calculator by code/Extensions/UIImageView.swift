@@ -7,9 +7,15 @@
 
 import UIKit
 extension UIImageView {
-    static func makeBackground () -> UIImageView {
+    static func makeMainBackground () -> UIImageView {
         let background = UIImageView()
         background.image = UIImage(named: "calculate_background")
+        background.contentMode = .scaleAspectFit
+       return background
+    }
+    static func makeFinalBackground () -> UIImageView {
+        let background = UIImageView()
+        background.image = UIImage(named: "result_background")
         background.contentMode = .scaleAspectFit
        return background
     }

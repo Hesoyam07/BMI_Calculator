@@ -10,7 +10,7 @@ import UIKit
 
 class View: UIView {
  // UI
-    private let backgroundImage: UIImageView = .makeBackground()
+    private let backgroundImage: UIImageView = .makeMainBackground()
     private let labelBMI: UILabel = .makeLabel(text: "Узнай свой ИМТ", textAligment: .center, color: .darkGray, fontName: "BoldFont", and: 40)
     private let labelHeight: UILabel = .makeLabel(text: "Рост", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
     let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))

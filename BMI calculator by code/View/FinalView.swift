@@ -7,7 +7,8 @@
 
 import UIKit
 
-class FinalView: UIView {
+final class FinalView: UIView {
+    
     // Private UI
     
     private let finalBackgroundImage: UIImageView = .makeFinalBackground()
@@ -21,15 +22,13 @@ class FinalView: UIView {
         stackView.spacing = 10
         return stackView
     }()
-    // Public UI
+    // StackView filling
     let topLabel: UILabel = .makeLabel(text: "Ваш резльтат", textAligment: .center, color: .white, fontName: "BoldFont", and: 35)
     var midLabel: UILabel = .makeLabel(text: "" , textAligment: .center, color: UIColor.white, fontName: "BoldFont", and: 50)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(finalBackgroundImage)
-        addSubview(recalculateButton)
-        addSubview(labelContainer)
+        [finalBackgroundImage, recalculateButton, labelContainer ].forEach{addSubview ($0)}
         setLayout()
     }
     

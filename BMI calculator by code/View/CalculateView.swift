@@ -8,9 +8,11 @@
 import UIKit
 
 class CalculateView: UIView {
-    // UI
+    // Private UI
     private let backgroundImage: UIImageView = .makeMainBackground()
     private let labelBMI: UILabel = .makeLabel(text: "Узнай свой ИМТ", textAligment: .center, color: .darkGray, fontName: "BoldFont", and: 40)
+    
+    // Public UI
     private let labelHeight: UILabel = .makeLabel(text: "Рост", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
     public let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1), textColor: UIColor.white)
     let labelWeight: UILabel = .makeLabel(text: "Вес", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
@@ -41,17 +43,14 @@ class CalculateView: UIView {
         
         setLayout()
     }
-    // Life cycle
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
+   
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
-    // Methods
+    
     func setLayout (){
         [backgroundImage,
          labelBMI,

@@ -33,15 +33,16 @@ class ViewController: UIViewController {
         print (decimalValue)
     }
     @objc public func calculateButtonTapped (_ sender: UIButton) {
-        let secondViewController = FinalViewController()
+        let finalViewController = FinalViewController()
         if let weight = Double(mainView.weightValue.text!), let height = Double(mainView.heightValue.text!) {
             let bmi = weight / pow(height, 2)
-            secondViewController.bmiValue = String(format: "%.2f", bmi)
+            finalViewController.bmiValue = String(format: "%.2f", bmi)
             print("BMI is: \(bmi)")
         } else {
             print("Invalid input")
         }
-        self.present(secondViewController, animated: false, completion: nil)
+        finalViewController.modalPresentationStyle = .fullScreen
+        self.present(finalViewController, animated: true, completion: nil)
     }
     
     

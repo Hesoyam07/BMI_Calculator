@@ -22,6 +22,7 @@ class FinalViewController: UIViewController {
     }
     @objc func recalculateButtonTapped () {
         let mainViewController = ViewController()
-        self.present(mainViewController, animated: false, completion: nil)
+        mainViewController.modalPresentationStyle = .fullScreen
+        self.present(mainViewController, animated: true, completion: nil)
     }
 }

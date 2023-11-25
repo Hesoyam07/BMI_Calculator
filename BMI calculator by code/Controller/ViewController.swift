@@ -34,13 +34,8 @@ class ViewController: UIViewController {
     }
     @objc public func calculateButtonTapped (_ sender: UIButton) {
         let finalViewController = FinalViewController()
-        if let weight = Double(mainView.weightValue.text!), let height = Double(mainView.heightValue.text!) {
-            let bmi = weight / pow(height, 2)
-            finalViewController.bmiValue = String(format: "%.2f", bmi)
-            print("BMI is: \(bmi)")
-        } else {
-            print("Invalid input")
-        }
+        var calculatorBrain = CalculatorBrain()
+        finalViewController.bmiValue = String(format: "%.2f", calculatorBrain.calculator(calculateView: mainView)!)
         finalViewController.modalPresentationStyle = .fullScreen
         self.present(finalViewController, animated: true, completion: nil)
     }

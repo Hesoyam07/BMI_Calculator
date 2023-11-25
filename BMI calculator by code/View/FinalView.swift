@@ -15,7 +15,7 @@ final class FinalView: UIView {
      let recalculateButton: UIButton = .makeButton(text: "Перерассчитать", color: UIColor.white, textColor: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
     
     private lazy var labelContainer: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [topLabel, midLabel])
+        let stackView = UIStackView(arrangedSubviews: [topLabel, midLabel, bottomLabel])
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
@@ -25,6 +25,7 @@ final class FinalView: UIView {
     // StackView filling
     let topLabel: UILabel = .makeLabel(text: "Ваш резльтат", textAligment: .center, color: .white, fontName: "BoldFont", and: 35)
     var midLabel: UILabel = .makeLabel(text: "" , textAligment: .center, color: UIColor.white, fontName: "BoldFont", and: 50)
+    var bottomLabel: UILabel = .makeLabel(text: "", textAligment: .center, color: UIColor.white, fontName: "BoldFont", and: 30)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

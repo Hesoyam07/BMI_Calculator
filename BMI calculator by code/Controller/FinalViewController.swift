@@ -8,17 +8,19 @@
 import UIKit
 
 class FinalViewController: UIViewController {
-    let mainView = FinalView()
+    let finalView = FinalView()
+    let calculatorBrain = CalculatorBrain()
     var bmiValue: String?
     override func loadView() {
         super.loadView()
-        view = mainView
+        view = finalView
     }
      override func viewDidLoad() {
         super.viewDidLoad()
          view.backgroundColor = .blue
-         mainView.midLabel.text = bmiValue
-         mainView.recalculateButton.addTarget(self, action: #selector(recalculateButtonTapped), for: .touchUpInside)
+         finalView.midLabel.text = bmiValue
+         finalView.bottomLabel.text = calculatorBrain.changeLabel(finalViewController: self, finalView: finalView)
+         finalView.recalculateButton.addTarget(self, action: #selector(recalculateButtonTapped), for: .touchUpInside)
     }
     @objc func recalculateButtonTapped () {
         let mainViewController = ViewController()

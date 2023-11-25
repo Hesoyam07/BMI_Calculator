@@ -5,15 +5,14 @@
 //  Created by Дмитрий on 20.11.2023.
 //
 
-import Foundation
 import UIKit
 
-class View: UIView {
- // UI
+class CalculateView: UIView {
+    // UI
     private let backgroundImage: UIImageView = .makeMainBackground()
     private let labelBMI: UILabel = .makeLabel(text: "Узнай свой ИМТ", textAligment: .center, color: .darkGray, fontName: "BoldFont", and: 40)
     private let labelHeight: UILabel = .makeLabel(text: "Рост", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
-    let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
+    public let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1), textColor: UIColor.white)
     let labelWeight: UILabel = .makeLabel(text: "Вес", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
     let heightSlider: UISlider = .makeSlider(maxValue: 3, minValue: 1.2)
     let weightSlider: UISlider = .makeSlider(maxValue: 200, minValue: 10)
@@ -27,18 +26,19 @@ class View: UIView {
         label.text = "1.2"
         return label
     }()
- // Views
+    // Views
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(backgroundImage)
-        addSubview(labelBMI)
-        addSubview(labelHeight)
-        addSubview(heightSlider)
-        addSubview(labelWeight)
-        addSubview(weightSlider)
-        addSubview(calculateButton)
-        addSubview(weightValue)
-        addSubview(heightValue)
+        [backgroundImage,
+         labelBMI,
+         labelHeight,
+         heightSlider,
+         labelWeight,
+         weightSlider,
+         calculateButton,
+         weightValue,
+         heightValue].forEach { addSubview($0) }
+        
         setLayout()
     }
     // Life cycle
@@ -51,7 +51,7 @@ class View: UIView {
     }
     
     
-   // Methods
+    // Methods
     func setLayout (){
         [backgroundImage,
          labelBMI,
@@ -103,10 +103,10 @@ class View: UIView {
             calculateButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             calculateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
             calculateButton.topAnchor.constraint(equalTo: weightSlider.bottomAnchor, constant: 10)
-
-
+            
+            
         ])
     }
-
-
+    
+    
 }

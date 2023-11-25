@@ -9,8 +9,9 @@ import UIKit
 
 extension UIButton {
     
-    static func makeButton(text: String, color: UIColor) -> UIButton {
+    static func makeButton(text: String, color: UIColor, textColor: UIColor) -> UIButton {
         let button = UIButton()
+        button.setTitleColor(textColor, for: .normal)
         button.setTitle(text, for: .normal)
         button.backgroundColor = color
         return button

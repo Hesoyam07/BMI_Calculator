@@ -8,8 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let mainView = View()
+    let mainView = CalculateView()
     
     override func loadView() {
         super.loadView()
@@ -33,14 +32,16 @@ class ViewController: UIViewController {
         mainView.weightValue.text = decimalValue
         print (decimalValue)
     }
-    @objc func calculateButtonTapped (_ sender: UIButton) {
-        
+    @objc public func calculateButtonTapped (_ sender: UIButton) {
+        let secondViewController = FinalViewController()
         if let weight = Double(mainView.weightValue.text!), let height = Double(mainView.heightValue.text!) {
             let bmi = weight / pow(height, 2)
+            secondViewController.bmiValue = String(format: "%.2f", bmi)
             print("BMI is: \(bmi)")
         } else {
             print("Invalid input")
         }
+        self.present(secondViewController, animated: false, completion: nil)
     }
     
     

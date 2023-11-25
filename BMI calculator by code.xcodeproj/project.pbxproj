@@ -17,8 +17,8 @@
 		2C9A05FB2B0D4EFB008D1D9A /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05FA2B0D4EFB008D1D9A /* UILabel.swift */; };
 		2C9A05FD2B0D4F83008D1D9A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05FC2B0D4F83008D1D9A /* UIImageView.swift */; };
 		2C9A05FF2B0D5048008D1D9A /* UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A05FE2B0D5048008D1D9A /* UISlider.swift */; };
-		2C9A06012B0D51E2008D1D9A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A06002B0D51E2008D1D9A /* UIView.swift */; };
 		2C9A06032B0EA51A008D1D9A /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A06022B0EA51A008D1D9A /* FinalView.swift */; };
+		2C9A06052B0FDB34008D1D9A /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9A06042B0FDB34008D1D9A /* FinalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +34,8 @@
 		2C9A05FA2B0D4EFB008D1D9A /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		2C9A05FC2B0D4F83008D1D9A /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		2C9A05FE2B0D5048008D1D9A /* UISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISlider.swift; sourceTree = "<group>"; };
-		2C9A06002B0D51E2008D1D9A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2C9A06022B0EA51A008D1D9A /* FinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
+		2C9A06042B0FDB34008D1D9A /* FinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				2C9A05E22B0B7013008D1D9A /* ViewController.swift */,
+				2C9A06042B0FDB34008D1D9A /* FinalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,7 +113,6 @@
 				2C9A05FA2B0D4EFB008D1D9A /* UILabel.swift */,
 				2C9A05FC2B0D4F83008D1D9A /* UIImageView.swift */,
 				2C9A05FE2B0D5048008D1D9A /* UISlider.swift */,
-				2C9A06002B0D51E2008D1D9A /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,9 +193,9 @@
 				2C9A05FF2B0D5048008D1D9A /* UISlider.swift in Sources */,
 				2C9A05FD2B0D4F83008D1D9A /* UIImageView.swift in Sources */,
 				2C9A05E32B0B7013008D1D9A /* ViewController.swift in Sources */,
+				2C9A06052B0FDB34008D1D9A /* FinalViewController.swift in Sources */,
 				2C9A05DF2B0B7013008D1D9A /* AppDelegate.swift in Sources */,
 				2C9A05FB2B0D4EFB008D1D9A /* UILabel.swift in Sources */,
-				2C9A06012B0D51E2008D1D9A /* UIView.swift in Sources */,
 				2C9A05E12B0B7013008D1D9A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

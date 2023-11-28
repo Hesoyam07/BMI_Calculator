@@ -24,18 +24,21 @@ struct CalculatorBrain {
     }
     
     func changeLabel (finalViewController: FinalViewController, finalView: FinalView) -> String? {
-        //let finalViewController = FinalViewController()
         var text = finalView.bottomLabel.text
         let bmiValue = Double (finalViewController.bmiValue!)!
        
-        if bmiValue <= 13.5 && bmiValue <= 18.4 {
+        if  bmiValue <= 18.4 {
             text = "Кушай больше"
+            finalView.backgroundColor = .purple
         } else if bmiValue >= 18.5 && bmiValue <= 24.9 {
             text = "Все в порядке так держать!"
+            finalView.backgroundColor = .blue
         } else if bmiValue >= 25 && bmiValue <= 29.9 {
             text = "Кушай меньше"
+            finalView.backgroundColor = .orange
         } else if bmiValue > 30 {
             text = "Кушай сильно меньше"
+            finalView.backgroundColor = .red
         }
         return text
     }

@@ -9,7 +9,7 @@ import UIKit
 
 final class FinalView: UIView {
     
-    // Private UI
+    // MARK: Private UI
     
     private let finalBackgroundImage: UIImageView = .makeFinalBackground()
      let recalculateButton: UIButton = .makeButton(text: "Перерассчитать", color: UIColor.white, textColor: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1))
@@ -22,7 +22,7 @@ final class FinalView: UIView {
         stackView.spacing = 10
         return stackView
     }()
-    // StackView filling
+    // MARK: StackView filling
     let topLabel: UILabel = .makeLabel(text: "Ваш резльтат", textAligment: .center, color: .white, fontName: "BoldFont", and: 35)
     var midLabel: UILabel = .makeLabel(text: "" , textAligment: .center, color: UIColor.white, fontName: "BoldFont", and: 50)
     var bottomLabel: UILabel = .makeLabel(text: "", textAligment: .center, color: UIColor.white, fontName: "BoldFont", and: 30)

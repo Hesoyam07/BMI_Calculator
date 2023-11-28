@@ -8,12 +8,12 @@
 import UIKit
 
 class CalculateView: UIView {
-    // Private UI
+    // MARK: Private UI
     private let backgroundImage: UIImageView = .makeMainBackground()
     private let labelBMI: UILabel = .makeLabel(text: "Узнай свой ИМТ", textAligment: .center, color: .darkGray, fontName: "BoldFont", and: 40)
-    
-    // Public UI
     private let labelHeight: UILabel = .makeLabel(text: "Рост", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
+
+    // MARK: Public UI
     public let calculateButton: UIButton = .makeButton(text: "Рассчитать", color: UIColor(red: 0.386, green: 0.377, blue: 0.616, alpha: 1), textColor: UIColor.white)
     let labelWeight: UILabel = .makeLabel(text: "Вес", textAligment: .left, color: .darkGray, fontName: "LightFont", and: 17)
     let heightSlider: UISlider = .makeSlider(maxValue: 3, minValue: 1.2)
@@ -28,7 +28,7 @@ class CalculateView: UIView {
         label.text = "1.2"
         return label
     }()
-    // Views
+    // MARK: Views
     override init(frame: CGRect) {
         super.init(frame: frame)
         [backgroundImage,
